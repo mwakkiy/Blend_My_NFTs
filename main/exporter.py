@@ -447,9 +447,24 @@ def render_and_save_nfts(input):
                         check_failed_exists(f"{model_path}.glb")
                         bpy.ops.export_scene.gltf(
                                 filepath=f"{model_path}.glb",
+                                export_yup=True,
+                                export_apply=True,
+                                export_texcoords=True,
+                                export_normals=True,
+                                export_materials='EXPORT',
+                                export_image_format='JPEG',
+                                export_colors=True,
+                                export_animations=True,
+                                export_current_frame=True,
+                                export_force_sampling=True,
+                                export_nla_strips=True,
+                                export_anim_single_armature=True,
+                                export_reset_pose_bones=True,
+                                export_morph=True,
+                                export_morph_normal=True,
+                                export_skins=False,
                                 check_existing=True,
                                 export_format='GLB',
-                                export_keep_originals=True,
                                 use_selection=True
                         )
                     if input.model_file_format == 'GLTF_SEPARATE':
